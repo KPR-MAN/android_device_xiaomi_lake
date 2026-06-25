@@ -161,12 +161,6 @@ TW_HAS_MTP := true
 TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
 BOARD_SUPPRESS_SECURE_ERASE := true
 
-# Status bar — fixes "Unofficial" label overlapping battery/temp
-TW_STATUS_ICONS_ALIGN := center
-TW_CUSTOM_CPU_POS := 50
-TW_CUSTOM_CLOCK_POS := 300
-TW_CUSTOM_BATTERY_POS := 800
-
 # Tools
 TW_INCLUDE_FB2PNG := true
 TW_INCLUDE_REPACKTOOLS := true
