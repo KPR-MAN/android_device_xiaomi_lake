@@ -13,7 +13,7 @@ $(call inherit-product, vendor/twrp/config/common.mk)
 PRODUCT_DEVICE := lake
 PRODUCT_NAME := twrp_lake
 PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := Redmi 14C
+PRODUCT_MODEL := lake
 PRODUCT_MANUFACTURER := xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
