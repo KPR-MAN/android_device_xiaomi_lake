@@ -13,3 +13,31 @@ on fs && property:ro.debuggable=0
 on boot
     start health-hal-2-1
     start boot-hal-1-2
+
+on property:ro.crypto.state=encrypted
+    start prepdecrypt
+
+service prepdecrypt /system/bin/prepdecrypt.sh
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
+
+service vendor.keymaster-4-1 /vendor/bin/hw/android.hardware.keymaster@4.1-service.beanpod
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
+
+service vendor.gatekeeper-1-0 /vendor/bin/hw/android.hardware.gatekeeper-service.beanpod
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
+
+on property:crypto.ready=1
+    start vendor.keymaster-4-1
+    start vendor.gatekeeper-1-0
