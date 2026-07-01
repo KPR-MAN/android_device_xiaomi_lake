@@ -1,4 +1,2 @@
-allow recovery service_manager_service:service_manager { add find };
-allow recovery service_manager_vndservice:service_manager { add find };
 allow recovery keystore_service:service_manager find;
 allow recovery recovery:binder { call transfer };
