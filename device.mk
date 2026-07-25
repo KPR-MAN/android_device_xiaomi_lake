@@ -26,16 +26,39 @@ ENABLE_VIRTUAL_AB := true
 AB_OTA_UPDATER := true
 
 AB_OTA_PARTITIONS += \
+    apusys \
+    audio_dsp \
     boot \
+    ccu \
+    dpm \
     dtbo \
+    gpueb \
+    gz \
+    lk \
+    logo \
+    mcf_ota \
+    mcupm \
+    md1img \
+    mvpu_algo \
+    odm \
+    odm_dlkm \
+    pi_img \
+    preloader_raw \
     product \
+    scp \
+    spmfw \
+    sspm \
     system \
     system_ext \
+    tee \
     vbmeta \
     vbmeta_system \
     vbmeta_vendor \
+    vcp \
     vendor \
-    vendor_boot
+    vendor_boot \
+    vendor_dlkm \
+    mi_ext
 
 # Update engine
 PRODUCT_PACKAGES_DEBUG += \
@@ -51,7 +74,7 @@ PRODUCT_PACKAGES += \
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
     POSTINSTALL_PATH_system=system/bin/otapreopt_script \
-    FILESYSTEM_TYPE_system=ext4 \
+    FILESYSTEM_TYPE_system=erofs \
     POSTINSTALL_OPTIONAL_system=true
 
 # API
